@@ -66,7 +66,7 @@ export default function NewArrivals() {
   return (
     <section className="py-12 bg-white">
       {/* Newsletter form */}
-      <h2 className="text-2xl text-black font-bold text-center mb-8 md:text-3xl">
+      <h2 className="text-2xl text-black font-integralcf-bold text-center mb-8 md:text-3xl">
         New Arrivals
       </h2>
 

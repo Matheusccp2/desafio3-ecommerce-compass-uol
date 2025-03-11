@@ -120,8 +120,8 @@ export default function Home() {
         <div className="container mx-auto px-4 py-12 md:px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
             <div className="md:col-span-2">
-              <h3 className="text-xl font-bold mb-4 text-black">SHOP.CO</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-xl font-integralcf-bold mb-4 text-black">SHOP.CO</h3>
+              <p className="text-gray-600 mb-6 font-satoshi-regular">
                 We have clothes that suits your style and which you&apos;re
                 proud to wear. From women to men.
               </p>
@@ -201,25 +201,25 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold mb-4 text-black">COMPANY</h3>
+              <h3 className="text-lg font-bold mb-4 text-black font-satoshi-medium">COMPANY</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Career
                   </Link>
                 </li>
@@ -227,25 +227,25 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold mb-4 text-black">HELP</h3>
+              <h3 className="text-lg font-bold mb-4 text-black font-satoshi-medium">HELP</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Customer Support
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Delivery Details
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Terms & Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Privacy Policy
                   </Link>
                 </li>
@@ -253,25 +253,25 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold mb-4 text-black">FAQ</h3>
+              <h3 className="text-lg font-bold mb-4 text-black font-satoshi-medium">FAQ</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Account
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Manage Deliveries
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-regular">
                     Orders
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-600 hover:text-black">
+                  <Link href="#" className="text-gray-600 hover:text-black font-satoshi-Regular">
                     Payment
                   </Link>
                 </li>
