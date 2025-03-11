@@ -4,18 +4,23 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "export": "npx next build && npx next export",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run build && npm run export && gh-pages -d out"
+    "lint": "next lint"
   },
-  "homepage": "https://SEU-GITHUB.github.io/desafio3-ecommerce-compass-uol",
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-navigation-menu": "^1.2.5",
+    "@radix-ui/react-slot": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "lucide-react": "^0.479.0",
     "next": "15.1.6",
+    "next-themes": "^0.4.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -24,7 +29,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "gh-pages": "^6.3.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

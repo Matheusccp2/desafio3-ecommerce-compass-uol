@@ -1,12 +1,9 @@
-const isProd = process.env.NODE_ENV === "production";
+import type { NextConfig } from "next";
 
-const nextConfig = {
-  output: "export", // Gera um site estático
+const nextConfig: NextConfig = {
   images: {
-    unoptimized: true, // Evita problemas com otimização de imagens no GitHub Pages
+    domains: ["images.unsplash.com", "example.com"],
   },
-  basePath: isProd ? "/desafio3-ecommerce-compass-uol" : "", // Caminho base do repositório
-  assetPrefix: isProd ? "/desafio3-ecommerce-compass-uol/" : "", // Prefixo dos assets
 };
 
-module.exports = nextConfig;
+export default nextConfig;
