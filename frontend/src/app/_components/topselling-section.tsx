@@ -45,7 +45,7 @@ const TopSelling = () => {
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-2xl text-black font-integralcf-bold text-center mb-8 md:text-3xl">
+        <h2 className="text-2xl text-black font-bold text-center mb-8 md:text-3xl">
           TOP SELLING
         </h2>
 
@@ -58,12 +58,14 @@ const TopSelling = () => {
             {products.map((product) => (
               <ProductCard
                 key={product.id}
+                id={product.id}
                 image={product.image}
                 title={product.title}
                 rating={product.rating}
                 price={product.price}
                 originalPrice={product.originalPrice}
                 discount={product.discount}
+                slug={product.slug}
               />
             ))}
           </div>
@@ -72,7 +74,7 @@ const TopSelling = () => {
         <div className="flex justify-center mt-8">
           <Button
             variant="secondary"
-            className="bg-white text-black hover:bg-white/10 border border-muted-foreground rounded-full py-4 px-10"
+            className="bg-white text-black hover:bg-white/10 border border-muted-foreground"
           >
             View All
           </Button>

@@ -1,66 +1,107 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { Star, StarHalf } from "lucide-react";
-import { Card, CardContent } from "@/app/_components/ui/card";
+import { Star, ShoppingCart } from "lucide-react";
+import { Button } from "./ui/button";
+import { useCart } from "../context/cart-context";
 
 interface ProductCardProps {
+  id: number;
   image: string;
   title: string;
   rating: number;
   price: number;
   originalPrice?: number;
   discount?: number;
+  slug?: string;
 }
 
-export default function ProductCard({
+const ProductCard = ({
+  id,
   image,
   title,
   rating,
   price,
   originalPrice,
   discount,
-}: ProductCardProps) {
-  // Generate stars based on rating
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
+  slug = "",
+}: ProductCardProps) => {
+  const { addToCart } = useCart();
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart({
+      id,
+      image,
+      title,
+      price,
+      quantity: 1,
+      slug,
+    });
+  };
 
   return (
-    <Card className="overflow-hidden bg-transparent border-none shadow-sm hover:shadow-md transition-shadow">
-      <CardContent className="p-0">
-        <Link href="/product/1">
-          <div className="relative aspect-square">
-            <Image
-              src={image || "/placeholder.svg"}
-              alt={title}
-              fill
-              className="object-cover"
+    <div
+      className="group relative"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+
+      <div className="relative overflow-hidden rounded-lg bg-gray-100 mb-4">
+        <Link href={`/product/${slug}`}>
+        <img
+          src={image}
+          alt={title}
+          className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </Link>
+
+      {discount && (
+        <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs rounded">
+          {discount}% OFF
+        </div>
+      )}
+
+      <Button
+        variant="secondary"
+        size="sm"
+        className={`absolute bottom-0 left-0 right-0 bg-black text-white hover:bg-gray-800 rounded-t-none transition-all duration-300 flex items-center justify-center gap-2 ${isHovering ? "translate-y-0" : "translate-y-full"}`}
+        onClick={handleAddToCart}
+      >
+        <ShoppingCart size={16} />
+        Add to Cart
+      </Button>
+    </div><h3 className="font-semibold text-black mb-1 line-clamp-1">
+        <Link href={`/product/${slug}`}>{title}</Link>
+      </h3>
+
+      <div className="flex items-center mb-2">
+        <div className="flex text-yellow-400 mr-2">
+          {[...Array(5)].map((_, i) => (
+            <Star
+              key={i}
+              size={16}
+              fill={i < Math.floor(rating) ? "currentColor" : "none"}
+              strokeWidth={i < Math.floor(rating) ? 0 : 1.5}
             />
-          </div>
-          <div className="p-4">
-            <h3 className="font-medium text-lg mb-2 text-black">{title}</h3>
-            <div className="flex items-center mb-2">
-              {[...Array(fullStars)].map((_, i) => (
-                <Star key={i} size={16} fill="#FFC633" color="#FFC633" />
-              ))}
-              {hasHalfStar && <StarHalf size={16} fill="#eee" color="#eee" />}
-              <span className="ml-2 text-sm text-gray-600">{rating}/5</span>
-            </div>
-            <div className="flex items-center">
-              <span className="font-bold text-lg text-black">${price}</span>
-              {originalPrice && (
-                <span className="ml-2 text-muted-foreground line-through text-sm">
-                  ${originalPrice}
-                </span>
-              )}
-              {discount && (
-                <span className="ml-2 bg-red-100 text-red-600 text-xs px-2 py-1 rounded">
-                  -{discount}%
-                </span>
-              )}
-            </div>
-          </div>
-        </Link>
-      </CardContent>
-    </Card>
+          ))}
+        </div>
+        <span className="text-sm text-gray-500">({rating})</span>
+      </div>
+
+      <div className="flex items-center">
+        <span className="font-bold text-black">${price.toFixed(2)}</span>
+        {originalPrice && (
+          <span className="ml-2 text-gray-400 line-through text-sm">
+            ${originalPrice.toFixed(2)}
+          </span>
+        )}
+      </div>
+
+    </div>
   );
-}
+
+};
+
+export default ProductCard;
