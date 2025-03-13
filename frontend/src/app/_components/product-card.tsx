@@ -54,7 +54,7 @@ const ProductCard = ({
         <img
           src={image}
           alt={title}
-          className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          className="h-64 w-full min-w-[290px] max-h[290px] object-cover transition-transform duration-300 group-hover:scale-105" />
       </Link>
 
       {discount && (
@@ -78,7 +78,7 @@ const ProductCard = ({
 
       <div className="flex items-center mb-2">
         <div className="flex text-yellow-400 mr-2">
-          {[...Array(5)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <Star
               key={i}
               size={16}
