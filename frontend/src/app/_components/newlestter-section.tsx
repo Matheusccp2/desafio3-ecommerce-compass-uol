@@ -19,7 +19,7 @@ export default function Newsletter() {
             <Input
               type="email"
               placeholder="Enter your email address"
-              className="pl-10 py-6 bg-white rounded-full w-[300px] font-satoshi-medium"
+              className="pl-10 py-6 bg-white rounded-full w-[300px] font-satoshi-medium text-black" 
               required
             />
             <Mail className="absolute top-4 left-4 text-gray-400" size={18} />

@@ -62,10 +62,10 @@ export default function Home() {
               </div>
 
               <div className="relative">
-                <div className="absolute -top-6 left-10 w-12 h-12 rounded-full transform">
+                <div className="absolute -top-6 left-[250px] w-12 h-12 rounded-full transform">
                   <img src="/vector-direita.svg" alt="" />
                 </div>
-                <div className="absolute bottom-20 -right-10 w-20 h-20  rounded-full transform">
+                <div className="absolute bottom-20 -right-[200px] w-20 h-20  rounded-full transform">
                   <img src="/vector-esquerda.svg" alt="" />
                 </div>
               </div>
@@ -89,11 +89,11 @@ export default function Home() {
               BROWSE BY DRESS STYLE
             </h2>
 
-            <div className="grid grid-cols-2 grid-rows-2 gap-6">
+            <div className="grid grid-cols-4 grid-rows-1 gap-6">
               <CategoryCard image="/casual.png" title="Casual" />
-              <CategoryCard image="/formal.png" title="Formal" className="" />
+              <CategoryCard image="/formal.png" title="Formal" />
               <CategoryCard image="/party.png" title="Party" />
-              <CategoryCard image="/gym.png" title="Gym" className="" />
+              <CategoryCard image="/gym.png" title="Gym" />
             </div>
 
           </div>
